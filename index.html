@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gold Bay Builders Inc — Premium roofing & construction in the Bay Area. Licensed, bonded, insured. Free estimates. Call (408) 506-7184." />
+  <title>Gold Bay Builders Inc | Roofing & Construction | Bay Area</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #090909;
+      --off:      #0e0e0e;
+      --panel:    #141414;
+      --panel2:   #1a1a1a;
+      --border:   rgba(255,255,255,0.07);
+      --white:    #ffffff;
+      --cream:    #faf7f0;
+
+      /* GOLD BAY GOLD PALETTE */
+      --gold:     #C9A84C;
+      --gold-dk:  #A8872E;
+      --gold-lt:  #E2C87A;
+      --gold-bg:  rgba(201,168,76,0.09);
+      --gold-bg2: rgba(201,168,76,0.04);
+
+      /* Bay blue accent */
+      --blue:     #1E6FA8;
+      --blue-lt:  #2E86C4;
+      --blue-bg:  rgba(30,111,168,0.1);
+
+      /* Warm secondary */
+      --amber:    #E8A020;
+      --amber-bg: rgba(232,160,32,0.08);
+      --stone:    #78716C;
+      --stone-lt: #A8A29E;
+
+      --dim:      rgba(255,248,235,0.45);
+      --dim2:     rgba(255,248,235,0.12);
+      --tr:       0.26s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.55; pointer-events: none; z-index: 9999;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    .display { font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; line-height: 0.92; }
+    .heading { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; line-height: 0.95; }
+    .label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      font-family: 'Barlow Condensed', sans-serif;
+      color: var(--gold);
+    }
+    .label::before { content: ''; display: inline-block; width: 20px; height: 1.5px; background: var(--gold); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: 3px;
+      border: none; cursor: pointer; transition: all var(--tr); white-space: nowrap;
+    }
+    .btn-gold { background: var(--gold); color: var(--black); }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,168,76,0.4); }
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-blue:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(30,111,168,0.4); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--dim2); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .btn-outline-gold { background: transparent; color: var(--gold); border: 1.5px solid rgba(201,168,76,0.4); }
+    .btn-outline-gold:hover { background: var(--gold-bg); border-color: var(--gold); transform: translateY(-2px); }
+    .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
+
+    /* ANNOUNCE BAR */
+    .announce {
+      background: linear-gradient(90deg, var(--gold-dk) 0%, var(--gold) 50%, var(--gold-dk) 100%);
+      padding: 10px 0; text-align: center;
+      background-size: 200% auto;
+      animation: shimmer 4s linear infinite;
+    }
+    @keyframes shimmer { 0%{background-position:200% center;} 100%{background-position:-200% center;} }
+    .announce a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); }
+    .announce a:hover { opacity: 0.75; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(9,9,9,0.97);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--tr);
+    }
+    nav.shadow { box-shadow: 0 2px 30px rgba(0,0,0,0.9); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; padding: 0 28px;
+      max-width: 1180px; margin: 0 auto;
+    }
+    .logo-wrap img { height: 48px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,248,235,0.38); transition: color var(--tr); position: relative;
+    }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width var(--tr); }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-phone {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700;
+      color: rgba(255,248,235,0.7); letter-spacing: 0.06em; transition: color var(--tr);
+      white-space: nowrap;
+    }
+    .nav-phone:hover { color: var(--gold); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(255,248,235,0.6); border-radius: 2px; transition: var(--tr); }
+
+    /* MOBILE MENU */
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--black); z-index: 300; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); transition: color var(--tr); }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--dim); font-size: 2rem; cursor: pointer; line-height: 1; }
+    .mobile-close:hover { color: var(--white); }
+
+    /* ===================== HERO ===================== */
+    #hero { position: relative; min-height: 96vh; display: flex; align-items: center; overflow: hidden; }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(130deg, rgba(9,9,9,0.97) 0%, rgba(9,9,9,0.88) 50%, rgba(9,9,9,0.55) 100%),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80') center/cover no-repeat;
+    }
+    #hero::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 90% 80%, rgba(232,160,32,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 70% 60%, rgba(30,111,168,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Bay water SVG wave at bottom */
+    .hero-wave { position: absolute; bottom: -1px; left: 0; right: 0; z-index: 1; line-height: 0; }
+    .hero-wave svg { display: block; width: 100%; }
+
+    .hero-inner { position: relative; z-index: 2; width: 100%; padding: 120px 0 160px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold-bg); border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 100px; padding: 7px 18px; margin-bottom: 32px;
+    }
+    .hero-badge span { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.7);} }
+
+    .hero-title { font-size: clamp(3.2rem, 8.5vw, 7.5rem); color: var(--white); margin-bottom: 8px; }
+    .hero-title .accent { color: var(--gold); }
+    .hero-title .accent2 { color: var(--blue-lt); }
+
+    .hero-sub { font-family: 'Outfit', sans-serif; font-size: clamp(1rem, 2.5vw, 1.15rem); font-weight: 400; color: var(--dim); max-width: 560px; margin: 20px 0 40px; line-height: 1.75; }
+    .hero-phone { display: block; font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5.5vw, 3.8rem); letter-spacing: 0.06em; color: var(--white); margin-bottom: 36px; transition: color var(--tr); }
+    .hero-phone:hover { color: var(--gold); }
+    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+    .hero-badges { display: flex; align-items: center; gap: 28px; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .hbadge { display: flex; align-items: center; gap: 10px; }
+    .hbadge-icon { width: 38px; height: 38px; background: var(--gold-bg); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .hbadge-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; color: rgba(255,248,235,0.65); line-height: 1.3; }
+
+    .hero-inner-grid { display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: center; }
+
+    /* QUOTE CARD */
+    .quote-card { background: var(--panel); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 3px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.6); }
+    .quote-card-header { background: var(--panel2); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+    .quote-card-header h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); margin-bottom: 4px; }
+    .quote-card-header p { font-size: 0.85rem; color: var(--dim); font-family: 'Outfit', sans-serif; }
+    .quote-card-body { padding: 28px; }
+    .fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .fg label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,248,235,0.32); }
+    .fg input, .fg select, .fg textarea { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 3px; padding: 12px 16px; color: var(--white); font-family: 'Outfit', sans-serif; font-size: 0.95rem; width: 100%; outline: none; transition: border-color var(--tr), box-shadow var(--tr); }
+    .fg input::placeholder, .fg textarea::placeholder { color: rgba(255,255,255,0.14); }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+    .fg select option { background: #141414; color: #fff; }
+    .fg textarea { resize: vertical; min-height: 90px; }
+    .quote-submit .btn { width: 100%; justify-content: center; font-size: 0.85rem; padding: 15px; }
+    .quote-note { text-align: center; margin-top: 10px; font-size: 0.72rem; color: rgba(255,255,255,0.18); padding-bottom: 4px; }
+
+    /* ===================== MARQUEE ===================== */
+    .marquee-wrap { background: var(--gold); overflow: hidden; padding: 11px 0; }
+    .marquee-track { display: flex; animation: marquee 24s linear infinite; width: max-content; }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+    .marquee-item { display: inline-flex; align-items: center; gap: 18px; padding: 0 30px; white-space: nowrap; }
+    .marquee-text { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); }
+    .marquee-star { color: var(--black); font-size: 0.6rem; }
+
+    /* ===================== ABOUT ===================== */
+    #about { padding: 120px 0; background: var(--off); position: relative; overflow: hidden; }
+    #about::before {
+      content: 'GBB'; position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+      font-family: 'Bebas Neue', sans-serif; font-size: 22rem;
+      color: rgba(201,168,76,0.025); letter-spacing: -0.02em;
+      pointer-events: none; line-height: 1; user-select: none;
+    }
+    #about::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 40% 50% at 5% 10%, rgba(201,168,76,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 95% 90%, rgba(30,111,168,0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+    .about-img-stack { position: relative; }
+    .about-img-main { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; background: var(--panel); }
+    .about-img-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .about-img-main:hover img { transform: scale(1.04); }
+    .about-founded {
+      position: absolute; bottom: -24px; right: -24px;
+      background: var(--gold); color: var(--black);
+      padding: 22px 26px; border-radius: 3px; text-align: center;
+      box-shadow: 0 12px 40px rgba(201,168,76,0.4);
+    }
+    .about-founded-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; line-height: 1; display: block; }
+    .about-founded-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-top: 4px; opacity: 0.65; }
+    .about-content .label { margin-bottom: 16px; display: block; }
+    .about-heading { font-size: clamp(2rem, 4vw, 3.2rem); color: var(--white); margin-bottom: 20px; }
+    .about-text { font-size: 1rem; color: var(--dim); line-height: 1.9; margin-bottom: 16px; }
+    .about-highlight {
+      background: var(--gold-bg); border-left: 3px solid var(--gold);
+      border-radius: 0 6px 6px 0; padding: 18px 22px; margin: 24px 0 32px;
+      font-size: 0.93rem; color: rgba(255,248,235,0.7); font-style: italic; line-height: 1.75;
+    }
+
+    /* ===================== SERVICES ===================== */
+    #services { padding: 120px 0; background: var(--black); position: relative; overflow: hidden; }
+    #services::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 40% at 100% 50%, rgba(30,111,168,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 30% at 0% 100%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; gap: 20px; flex-wrap: wrap; }
+    .section-header-left .label { display: block; margin-bottom: 12px; }
+    .section-h { font-size: clamp(2rem, 4.5vw, 3.4rem); color: var(--white); }
+    .section-h .accent { color: var(--gold); }
+    .section-h .accent2 { color: var(--blue-lt); }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; position: relative; z-index: 1; }
+    .svc-card { background: var(--panel); padding: 44px 28px; position: relative; overflow: hidden; transition: background var(--tr); cursor: default; }
+    .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: transparent; transition: background var(--tr); }
+    .svc-card:hover { background: var(--panel2); }
+    .svc-card:nth-child(odd):hover::before { background: var(--gold); }
+    .svc-card:nth-child(even):hover::before { background: var(--blue-lt); }
+
+    .svc-bg-num { position: absolute; bottom: -10px; right: 10px; font-family: 'Bebas Neue', sans-serif; font-size: 6rem; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; user-select: none; transition: color var(--tr); }
+    .svc-card:nth-child(odd):hover .svc-bg-num { color: rgba(201,168,76,0.07); }
+    .svc-card:nth-child(even):hover .svc-bg-num { color: rgba(30,111,168,0.07); }
+
+    .svc-icon-wrap { width: 52px; height: 52px; background: var(--gold-bg); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px; transition: background var(--tr), border-color var(--tr); }
+    .svc-card:nth-child(odd):hover .svc-icon-wrap { background: var(--gold); border-color: var(--gold); }
+    .svc-card:nth-child(even) .svc-icon-wrap { background: var(--blue-bg); border-color: rgba(30,111,168,0.25); }
+    .svc-card:nth-child(even):hover .svc-icon-wrap { background: var(--blue); border-color: var(--blue); }
+
+    .svc-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); margin-bottom: 12px; }
+    .svc-desc { font-size: 0.9rem; color: var(--dim); line-height: 1.78; }
+    .svc-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); transition: gap var(--tr); }
+    .svc-card:nth-child(even) .svc-link { color: var(--blue-lt); }
+    .svc-link:hover { gap: 10px; }
+
+    /* ===================== STATS ===================== */
+    .stats-strip { background: var(--gold); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-item { padding: 50px 24px; text-align: center; border-right: 1px solid rgba(0,0,0,0.12); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 4rem); color: var(--black); line-height: 1; margin-bottom: 6px; letter-spacing: 0.04em; }
+    .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(0,0,0,0.5); }
+
+    /* ===================== PROCESS ===================== */
+    #process { padding: 120px 0; background: var(--off); position: relative; overflow: hidden; }
+    #process::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 40% 50% at 100% 0%, rgba(30,111,168,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 35% 40% at 0% 100%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; z-index: 1; }
+
+    .timeline { display: flex; flex-direction: column; gap: 8px; }
+    .tl-item { display: flex; gap: 16px; }
+    .tl-marker { display: flex; flex-direction: column; align-items: center; }
+    .tl-circle {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--panel); border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
+      color: var(--dim); flex-shrink: 0; transition: all var(--tr);
+    }
+    .tl-item:hover .tl-circle { border-color: var(--gold); color: var(--gold); background: var(--gold-bg); }
+    .tl-line { width: 2px; flex: 1; background: var(--border); margin: 8px 0; }
+    .tl-content { padding-bottom: 38px; }
+    .tl-content h4 { color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .tl-content p { color: var(--dim); font-size: 0.88rem; line-height: 1.8; }
+
+    .why-panel { background: var(--panel); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 3px; padding: 40px 36px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .why-panel h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); margin-bottom: 30px; }
+    .why-list { display: flex; flex-direction: column; }
+    .why-item { display: flex; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .why-item:last-child { border-bottom: none; }
+    .why-dot { width: 24px; height: 24px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; font-size: 0.7rem; font-weight: 900; color: var(--black); }
+    .why-item-title { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 4px; }
+    .why-item p { font-size: 0.83rem; color: var(--dim); line-height: 1.7; }
+    .why-footer { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
+    .why-footer img { height: 42px; width: auto; }
+    .why-footer-lbl { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 800; color: var(--gold); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .why-footer-sub { font-size: 0.75rem; color: var(--dim); }
+
+    /* ===================== REVIEWS ===================== */
+    #reviews { padding: 120px 0; background: var(--black); position: relative; overflow: hidden; }
+    #reviews::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 40% 40% at 0% 0%, rgba(201,168,76,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 35% 35% at 100% 100%, rgba(30,111,168,0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .reviews-score-bar { display: flex; align-items: center; gap: 20px; background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 18px 26px; border-radius: 3px; }
+    .reviews-score-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--gold); line-height: 1; }
+    .reviews-score-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; }
+    .reviews-score-info strong { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; display: block; }
+    .reviews-score-info span { font-size: 0.75rem; color: var(--dim); }
+
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; position: relative; z-index: 1; }
+    .review-card { background: var(--panel); padding: 36px 32px; position: relative; display: flex; flex-direction: column; transition: background var(--tr); }
+    .review-card:hover { background: var(--panel2); }
+    .review-card.featured { grid-column: 1 / -1; background: var(--gold); padding: 44px 52px; }
+    .review-card.featured:hover { background: var(--gold-lt); }
+    .review-stars { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 16px; }
+    .review-card:not(.featured) .review-stars { color: var(--gold); }
+    .review-card.featured .review-stars { color: var(--black); }
+    .review-text { font-size: 0.9rem; color: rgba(255,248,235,0.62); line-height: 1.9; flex: 1; margin-bottom: 24px; font-style: italic; }
+    .review-card.featured .review-text { font-size: 1.1rem; color: rgba(0,0,0,0.75); }
+    .review-tag { display: inline-block; background: var(--panel2); padding: 4px 10px; border-radius: 3px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 16px; }
+    .review-card.featured .review-tag { background: rgba(0,0,0,0.12); color: var(--black); }
+    .review-author { display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .review-card.featured .review-author { border-top-color: rgba(0,0,0,0.15); }
+    .review-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+    .review-avatar-init { width: 38px; height: 38px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--black); flex-shrink: 0; }
+    .review-card.featured .review-avatar-init { background: rgba(0,0,0,0.15); color: var(--black); }
+    .review-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); }
+    .review-card.featured .review-name { color: var(--black); }
+    .review-location { font-size: 0.72rem; color: var(--dim); margin-top: 2px; }
+    .review-card.featured .review-location { color: rgba(0,0,0,0.5); }
+    .review-card:not(.featured):nth-child(even) .review-stars { color: var(--blue-lt); }
+    .review-card:not(.featured):nth-child(even) .review-avatar-init { background: var(--blue); color: var(--white); }
+    .review-card:not(.featured):nth-child(even) .review-tag { color: var(--blue-lt); }
+
+    /* ===================== PORTFOLIO ===================== */
+    #portfolio { padding: 120px 0; background: var(--off); position: relative; overflow: hidden; }
+    #portfolio::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; position: relative; z-index: 1; }
+    .portfolio-item { position: relative; overflow: hidden; aspect-ratio: 4/3; background: var(--panel); }
+    .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .portfolio-item:hover img { transform: scale(1.06); }
+    .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(9,9,9,0.9) 0%, transparent 60%); opacity: 0; transition: opacity var(--tr); display: flex; align-items: flex-end; padding: 24px; }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); }
+
+    /* ===================== SERVICE AREA ===================== */
+    #service-area { padding: 80px 0; background: var(--black); }
+    .area-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .area-map { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; position: relative; }
+    .area-map iframe { width: 100%; height: 100%; border: none; filter: invert(0.9) hue-rotate(180deg) saturate(0.5); opacity: 0.7; }
+    .area-content .label { display: block; margin-bottom: 16px; }
+    .area-heading { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 20px; }
+    .area-text { font-size: 0.95rem; color: var(--dim); line-height: 1.85; margin-bottom: 28px; }
+    .area-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin-bottom: 32px; }
+    .area-list-item { display: flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.06em; color: rgba(255,248,235,0.6); }
+    .area-list-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+    /* ===================== FAQ ===================== */
+    #faq { padding: 120px 0; background: var(--off); position: relative; overflow: hidden; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 56px; position: relative; z-index: 1; }
+    .faq-item { background: var(--panel); padding: 36px 32px; transition: background var(--tr); border-top: 2px solid transparent; cursor: pointer; }
+    .faq-item:nth-child(odd) { border-top-color: var(--gold); }
+    .faq-item:nth-child(even) { border-top-color: var(--blue); }
+    .faq-item:hover { background: var(--panel2); }
+    .faq-q-label { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 12px; display: block; }
+    .faq-item:nth-child(even) .faq-q-label { color: var(--blue-lt); }
+    .faq-question { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 12px; }
+    .faq-answer { font-size: 0.88rem; color: var(--dim); line-height: 1.85; }
+
+    /* ===================== QUOTE SECTION ===================== */
+    #quote-section { padding: 120px 0; background: var(--black); position: relative; overflow: hidden; }
+    #quote-section::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 0% 50%, rgba(201,168,76,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 100% 50%, rgba(30,111,168,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .quote-section-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; z-index: 1; }
+    .quote-left .label { display: block; margin-bottom: 16px; }
+    .quote-heading { font-size: clamp(2.2rem, 4.5vw, 3.6rem); color: var(--white); margin-bottom: 18px; }
+    .quote-heading .accent { color: var(--gold); }
+    .quote-sub { font-size: 0.95rem; color: var(--dim); line-height: 1.9; margin-bottom: 40px; }
+
+    .contact-items { display: flex; flex-direction: column; gap: 12px; }
+    .contact-item { display: flex; align-items: center; gap: 16px; padding: 18px 20px; background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 3px; transition: border-left-color var(--tr), background var(--tr); }
+    .contact-item:hover { border-left-color: var(--blue-lt); background: var(--panel2); }
+    .contact-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .contact-clabel { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+    .contact-val { font-size: 0.97rem; font-weight: 600; color: var(--white); }
+    .contact-val a:hover { color: var(--gold); transition: color var(--tr); }
+
+    .quote-form-box { background: var(--panel); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 3px; padding: 44px 36px; }
+    .form-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); margin-bottom: 28px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fg-full { grid-column: 1 / -1; }
+    .form-submit-btn .btn { width: 100%; font-size: 0.85rem; padding: 16px; justify-content: center; margin-top: 8px; }
+    .form-note { text-align: center; margin-top: 10px; font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+    /* ===================== FOOTER ===================== */
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 72px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 56px; }
+    .footer-logo img { height: 52px; width: auto; margin-bottom: 18px; }
+    .footer-desc { font-size: 0.87rem; color: rgba(255,248,235,0.27); line-height: 1.95; max-width: 290px; }
+    .footer-heading { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-links a { font-size: 0.87rem; color: rgba(255,248,235,0.32); transition: color var(--tr); }
+    .footer-links a:hover { color: var(--white); }
+    .footer-contacts { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-contacts li { font-size: 0.87rem; color: rgba(255,248,235,0.32); display: flex; gap: 8px; align-items: flex-start; }
+    .footer-contacts a { color: rgba(255,248,235,0.32); transition: color var(--tr); }
+    .footer-contacts a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,248,235,0.2); }
+    .footer-lic { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,248,235,0.2); }
+    .footer-lic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); animation: pulse 2s infinite; }
+
+    /* FLOATING CTA */
+    .floating-cta { position: fixed; bottom: 24px; right: 24px; z-index: 150; display: none; }
+    .floating-cta.visible { display: block; }
+    .floating-cta .btn { border-radius: 100px; box-shadow: 0 8px 32px rgba(201,168,76,0.5); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22,0.61,0.36,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .rd1{transition-delay:0.1s;} .rd2{transition-delay:0.2s;} .rd3{transition-delay:0.3s;} .rd4{transition-delay:0.4s;}
+
+    /* ===================== RESPONSIVE ===================== */
+    @media(max-width:1100px){
+      .hero-inner-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:1024px){
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .review-card.featured { padding: 32px 28px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid>*:first-child { grid-column: 1/-1; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .area-inner { grid-template-columns: 1fr; gap: 50px; }
+    }
+    @media(max-width:860px){
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .about-inner { grid-template-columns: 1fr; gap: 60px; }
+      .about-founded { right: 0; }
+      .process-grid { grid-template-columns: 1fr; gap: 60px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .review-card.featured { grid-column: auto; padding: 30px 26px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .quote-section-inner { grid-template-columns: 1fr; gap: 50px; }
+    }
+    @media(max-width:600px){
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.12); padding: 24px 20px; }
+      .stat-item:last-child { border-bottom: none; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .form-row-2 { grid-template-columns: 1fr; }
+      .quote-form-box { padding: 28px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid>*:first-child { grid-column: auto; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .area-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating-cta" id="floatingCta">
+    <a href="#quote-section" class="btn btn-gold">Free Estimate</a>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#portfolio" onclick="closeMobile()">Work</a>
+    <a href="#reviews" onclick="closeMobile()">Reviews</a>
+    <a href="#faq" onclick="closeMobile()">FAQ</a>
+    <a href="tel:4085067184" style="color:var(--gold);">(408) 506-7184</a>
+    <a href="#quote-section" class="btn btn-gold" onclick="closeMobile()" style="margin-top:8px;">Free Estimate</a>
+  </div>
+
+  <div class="announce">
+    <a href="#quote-section">⭐ Licensed &amp; Bonded · Bay Area's Trusted Builders · Free Estimates · (408) 506-7184</a>
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <img src="https://github.com/user-attachments/assets/9ff9ed72-77c6-4401-ad46-a9a0907f2839" alt="Gold Bay Builders Inc" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:4085067184" class="nav-phone">(408) 506-7184</a>
+        <a href="#quote-section" class="btn btn-outline-gold" style="padding:9px 20px;font-size:0.72rem;">Free Estimate</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1360,50 1440,40 L1440,80 L0,80 Z" fill="#0e0e0e"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-inner-grid">
+          <div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span>Bay Area · Serving the South Bay &amp; Peninsula</span>
+            </div>
+            <h1 class="display hero-title">
+              Built Right.<br />Built to <span class="accent">Last.</span>
+            </h1>
+            <p class="hero-sub">Gold Bay Builders Inc has been delivering premium roofing and construction across the Bay Area. We show up on time, do the work right, and stand behind every project we touch.</p>
+            <a href="tel:4085067184" class="hero-phone">(408) 506-7184</a>
+            <div class="hero-actions">
+              <a href="#quote-section" class="btn btn-gold" style="font-size:0.88rem;padding:16px 36px;">Get a Free Estimate</a>
+              <a href="#services" class="btn btn-outline-white" style="font-size:0.88rem;padding:16px 36px;">View Services</a>
+            </div>
+            <div class="hero-badges">
+              <div class="hbadge"><div class="hbadge-icon">✓</div><div class="hbadge-text">Licensed<br />&amp; Bonded</div></div>
+              <div class="hbadge"><div class="hbadge-icon">🏗️</div><div class="hbadge-text">Bay Area<br />Local</div></div>
+              <div class="hbadge"><div class="hbadge-icon">⭐</div><div class="hbadge-text">5-Star<br />Reviews</div></div>
+              <div class="hbadge"><div class="hbadge-icon">🛡️</div><div class="hbadge-text">Warranty<br />Backed</div></div>
+            </div>
+          </div>
+
+          <!-- Hero Quote Card -->
+          <div class="quote-card">
+            <div class="quote-card-header">
+              <h3>Get Your Free Estimate</h3>
+              <p>Same day response — no spam, no pressure.</p>
+            </div>
+            <div class="quote-card-body">
+              <form id="heroForm" onsubmit="handleHeroForm(event)">
+                <div class="fg"><label>Your Name</label><input type="text" placeholder="David Smith" required /></div>
+                <div class="fg"><label>Phone *</label><input type="tel" placeholder="(408) 555-0100" required /></div>
+                <div class="fg">
+                  <label>Service Needed *</label>
+                  <select required>
+                    <option value="" disabled selected>Select a service...</option>
+                    <option>Roof Repair</option>
+                    <option>Roof Replacement</option>
+                    <option>New Construction</option>
+                    <option>Remodeling</option>
+                    <option>Gutters</option>
+                    <option>Decks &amp; Fences</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="fg"><label>City or Zip</label><input type="text" placeholder="San Jose, 95101" required /></div>
+                <div class="quote-submit">
+                  <button type="submit" class="btn btn-gold">Send My Request</button>
+                </div>
+              </form>
+              <p class="quote-note">No spam. We call back fast.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Gold Bay Builders Inc</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Roofing · Remodeling · New Construction</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Licensed &amp; Bonded · CA State</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Bay Area · South Bay · Peninsula</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">5-Star Google Reviews</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Free Estimates Always</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Gold Bay Builders Inc</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Roofing · Remodeling · New Construction</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Licensed &amp; Bonded · CA State</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Bay Area · South Bay · Peninsula</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">5-Star Google Reviews</span></div>
+      <div class="marquee-item"><span class="marquee-star">★</span><span class="marquee-text">Free Estimates Always</span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img-stack reveal">
+          <div class="about-img-main">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Gold Bay Builders crew at work" loading="lazy" />
+          </div>
+          <div class="about-founded">
+            <span class="about-founded-num">Bay</span>
+            <span class="about-founded-label">Area Trusted</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="label reveal">About Gold Bay</span>
+          <h2 class="heading about-heading reveal rd1">We Don't Guess.<br /><span style="color:var(--gold)">We Get It Done Right.</span></h2>
+          <p class="about-text reveal rd2">David Macias started Gold Bay Builders with one goal: build things the right way, every time. No shortcuts, no upselling work you don't need, no ghosting after the check clears.</p>
+          <p class="about-text reveal rd2">We're a Bay Area crew through and through. We know the neighborhoods, the permits, and the weather. When we give you a timeline and a price, we stick to both.</p>
+          <blockquote class="about-highlight reveal rd3">"David and his team were fantastic from start to finish. On time, on budget, and the quality of work is something we're still getting compliments on." — Marco R., San Jose</blockquote>
+          <a href="#quote-section" class="btn btn-gold reveal rd4">Get Your Free Estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="label reveal">What We Do</span>
+          <h2 class="heading section-h reveal rd1">Our <span class="accent">Services</span></h2>
+        </div>
+        <a href="#quote-section" class="btn btn-outline-gold reveal rd2" style="padding:13px 26px;font-size:0.78rem;">Get a Quote</a>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card reveal"><span class="svc-bg-num">01</span><div class="svc-icon-wrap">🏠</div><div class="svc-name">Roof Repair</div><p class="svc-desc">Leaks, storm damage, missing shingles. We find the real problem and fix it so it stays fixed.</p><a href="#quote-section" class="svc-link">Get Quote →</a></div>
+        <div class="svc-card reveal rd1"><span class="svc-bg-num">02</span><div class="svc-icon-wrap">🔨</div><div class="svc-name">Roof Replacement</div><p class="svc-desc">Full tear-off and install with top-tier materials. Clean, fast, and done right the first time.</p><a href="#quote-section" class="svc-link">Get Quote →</a></div>
+        <div class="svc-card reveal rd2"><span class="svc-bg-num">03</span><div class="svc-icon-wrap">🏗️</div><div class="svc-name">New Construction</div><p class="svc-desc">ADUs, additions, new builds. We take projects from permit to final walkthrough.</p><a href="#quote-section" class="svc-link">Get Quote →</a></div>
+        <div class="svc-card reveal rd3"><span class="svc-bg-num">04</span><div class="svc-icon-wrap">🪚</div><div class="svc-name">Remodeling</div><p class="svc-desc">Kitchens, bathrooms, full interior renovations. We transform spaces without destroying your life.</p><a href="#quote-section" class="svc-link">Get Quote →</a></div>
+        <div class="svc-card reveal"><span class="svc-bg-num">05</span><div class="svc-icon-wrap">💧</div><div class="svc-name">Gutters</div><p class="svc-desc">Installation, repair, and cleaning. Seamless gutters that protect your foundation for years.</p><a href="#quote-section" class="svc-link">Get Quote →</a></div>
+        <div class="svc-card reveal rd1"><span class="svc-bg-num">06</span><div class="svc-icon-wrap">🪵</div><div class="svc-name">Decks &amp; Fences</div><p class="svc-desc">New builds and repairs. Composite, cedar, pressure-treated — whatever your project needs.</p><a href="#quote-section" class="svc-link">Get Quote →</a></div>
+        <div class="svc-card reveal rd2"><span class="svc-bg-num">07</span><div class="svc-icon-wrap">📋</div><div class="svc-name">Permits &amp; Inspections</div><p class="svc-desc">We handle every permit and coordinate all inspections. You focus on your life, we handle the red tape.</p><a href="#quote-section" class="svc-link">Get Quote →</a></div>
+        <div class="svc-card reveal rd3"><span class="svc-bg-num">08</span><div class="svc-icon-wrap">💳</div><div class="svc-name">Financing Available</div><p class="svc-desc">Flexible payment options for larger projects. We want to help you get the job done right.</p><a href="#quote-section" class="svc-link">Learn More →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">Bay</div><div class="stat-label">Area Local</div></div>
+        <div class="stat-item"><div class="stat-num">5★</div><div class="stat-label">Google Rating</div></div>
+        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Licensed &amp; Bonded</div></div>
+        <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Estimates Always</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="process-grid">
+        <div>
+          <span class="label reveal" style="display:block;margin-bottom:16px;">How It Works</span>
+          <h2 class="heading reveal rd1" style="font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:48px;">From First Call to <span style="color:var(--gold)">Final Walkthrough</span></h2>
+          <div class="timeline">
+            <div class="tl-item reveal">
+              <div class="tl-marker"><div class="tl-circle">01</div><div class="tl-line"></div></div>
+              <div class="tl-content"><h4>Request Your Estimate</h4><p>Fill out the form or give us a call. We'll ask a few questions and schedule a time to come take a look. No charge, no obligation.</p></div>
+            </div>
+            <div class="tl-item reveal rd1">
+              <div class="tl-marker"><div class="tl-circle">02</div><div class="tl-line"></div></div>
+              <div class="tl-content"><h4>We Assess the Job</h4><p>David or one of our leads comes out, takes a real look, and tells you honestly what needs to be done — and what doesn't.</p></div>
+            </div>
+            <div class="tl-item reveal rd2">
+              <div class="tl-marker"><div class="tl-circle">03</div><div class="tl-line"></div></div>
+              <div class="tl-content"><h4>Review Your Quote</h4><p>Detailed written quote within 48 hours. No inflated materials, no hidden line items, no surprises when the invoice comes.</p></div>
+            </div>
+            <div class="tl-item reveal rd3">
+              <div class="tl-marker"><div class="tl-circle">04</div><div class="tl-line"></div></div>
+              <div class="tl-content"><h4>We Do the Work</h4><p>Our crew shows up when we say we will. We work clean, communicate throughout, and treat your property with respect.</p></div>
+            </div>
+            <div class="tl-item reveal rd4">
+              <div class="tl-marker"><div class="tl-circle">05</div></div>
+              <div class="tl-content"><h4>Final Walkthrough</h4><p>We walk through everything with you before we pack up. If something isn't perfect, we fix it. That's the deal.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="why-panel reveal rd2">
+          <h3>Why Customers Choose Gold Bay</h3>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-dot">✓</div>
+              <div><div class="why-item-title">We Show Up On Time</div><p>You get a specific time — not a 4-hour window. We respect your schedule as much as our own.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="why-dot">✓</div>
+              <div><div class="why-item-title">Transparent Pricing</div><p>Detailed written quotes every time. No hidden fees, no price creep. You see exactly what you're paying for before anything starts.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="why-dot">✓</div>
+              <div><div class="why-item-title">Clean Work Site</div><p>We clean up at the end of every day. Your property stays livable while we work — we don't leave it looking like a disaster zone.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="why-dot">✓</div>
+              <div><div class="why-item-title">Quality Materials Only</div><p>We don't cut corners on materials. Whatever goes into your project is built to last — that's how we earn repeat business.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="why-dot">✓</div>
+              <div><div class="why-item-title">Bay Area Expertise</div><p>We know local codes, permit requirements, and the quirks of Bay Area construction. That means fewer headaches for you.</p></div>
+            </div>
+          </div>
+          <div class="why-footer">
+            <img src="https://github.com/user-attachments/assets/9ff9ed72-77c6-4401-ad46-a9a0907f2839" alt="Gold Bay Builders" />
+            <div><div class="why-footer-lbl">David Macias · Owner</div><div class="why-footer-sub">Gold Bay Builders Inc · Bay Area</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="label reveal">Google Reviews</span>
+          <h2 class="heading section-h reveal rd1">Real Work. <span class="accent">Real Reviews.</span></h2>
+        </div>
+        <div class="reviews-score-bar reveal rd2">
+          <div class="reviews-score-num">5.0</div>
+          <div>
+            <div class="reviews-score-stars">★★★★★</div>
+            <div class="reviews-score-info"><strong>Google Verified</strong><span>Bay Area Customers</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card featured reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Gold Bay Builders did an incredible job on our roof replacement. David walked us through every step, the crew was professional and clean, and they finished a day ahead of schedule. I've already recommended them to my neighbors. Hands down the best contractor experience I've had in 15 years of homeownership."</p>
+          <div class="review-tag">Roof Replacement</div>
+          <div class="review-author">
+            <div class="review-avatar-init">M</div>
+            <div><div class="review-name">Marco Rodriguez</div><div class="review-location">San Jose, CA · Google Review</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Had a roof leak I'd been putting off for months. Gold Bay came out same week, found the actual source of the problem (not just the symptom), and fixed it right. No upsell, no drama."</p>
+          <div class="review-tag">Roof Repair</div>
+          <div class="review-author">
+            <div class="review-avatar-init">J</div>
+            <div><div class="review-name">Jason W.</div><div class="review-location">Sunnyvale, CA</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal rd1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Kitchen remodel came out better than we imagined. David's team was communicative throughout, kept things clean, and didn't disappear when small issues came up — they just fixed them."</p>
+          <div class="review-tag">Kitchen Remodel</div>
+          <div class="review-author">
+            <div class="review-avatar-init">L</div>
+            <div><div class="review-name">Lisa Chen</div><div class="review-location">Cupertino, CA</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal rd2">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Built us a gorgeous composite deck in 3 days. Two years later and it still looks like it was installed yesterday. These guys use real materials and real craftsmanship."</p>
+          <div class="review-tag">Deck Build</div>
+          <div class="review-author">
+            <div class="review-avatar-init">R</div>
+            <div><div class="review-name">Robert Kim</div><div class="review-location">Santa Clara, CA</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"ADU permit and construction from scratch. David handled the whole permit process, kept us in the loop, and the build was flawless. This was not a small project and they crushed it."</p>
+          <div class="review-tag">ADU Construction</div>
+          <div class="review-author">
+            <div class="review-avatar-init">P</div>
+            <div><div class="review-name">Patricia Nguyen</div><div class="review-location">San Jose, CA</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal rd1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Gutters and a full roof replacement. The price was fair, the communication was excellent, and the job site was spotless at the end of every day. Third time using Gold Bay — won't be the last."</p>
+          <div class="review-tag">Roof + Gutters</div>
+          <div class="review-author">
+            <div class="review-avatar-init">T</div>
+            <div><div class="review-name">Tom Alvarez</div><div class="review-location">Campbell, CA</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal rd2">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Bathroom renovation exceeded every expectation. Tile work was perfect, plumbing was clean, and the crew was genuinely respectful of our home. Would hire again without a second thought."</p>
+          <div class="review-tag">Bathroom Remodel</div>
+          <div class="review-author">
+            <div class="review-avatar-init">S</div>
+            <div><div class="review-name">Sandra M.</div><div class="review-location">Los Gatos, CA</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Emergency roof situation after a storm. David picked up on the first ring and had a crew out the next morning. Fixed, sealed, and signed off before the next rain hit."</p>
+          <div class="review-tag">Emergency Repair</div>
+          <div class="review-author">
+            <div class="review-avatar-init">A</div>
+            <div><div class="review-name">Ana Torres</div><div class="review-location">Milpitas, CA</div></div>
+          </div>
+        </div>
+        <div class="review-card reveal rd1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Cedar fence installation was clean, fast, and looks incredible. Posts are set perfectly, staining is even. I've had a lot of contractors work on my property — these guys are genuinely a cut above."</p>
+          <div class="review-tag">Fencing</div>
+          <div class="review-author">
+            <div class="review-avatar-init">K</div>
+            <div><div class="review-name">Kevin Park</div><div class="review-location">Saratoga, CA</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <div style="text-align:center;max-width:560px;margin:0 auto;position:relative;z-index:1;margin-bottom:56px;">
+        <span class="label reveal" style="display:block;margin-bottom:14px;">Portfolio</span>
+        <h2 class="heading section-h reveal rd1" style="margin-bottom:12px;">Recent <span class="accent">Projects</span></h2>
+        <p class="reveal rd2" style="font-size:0.92rem;color:var(--dim);">Real work from real jobs across the Bay Area. Every project gets the same level of attention and care.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Construction Project" loading="lazy" />
+          <div class="portfolio-overlay"><span class="portfolio-label">New Build</span></div>
+        </div>
+        <div class="portfolio-item reveal rd1">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Roofing Project" loading="lazy" />
+          <div class="portfolio-overlay"><span class="portfolio-label">Roof Replacement</span></div>
+        </div>
+        <div class="portfolio-item reveal rd2">
+          <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80" alt="Kitchen Remodel" loading="lazy" />
+          <div class="portfolio-overlay"><span class="portfolio-label">Kitchen Remodel</span></div>
+        </div>
+        <div class="portfolio-item reveal">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80" alt="Bathroom Renovation" loading="lazy" />
+          <div class="portfolio-overlay"><span class="portfolio-label">Bathroom Renovation</span></div>
+        </div>
+        <div class="portfolio-item reveal rd1">
+          <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=800&q=80" alt="Deck Build" loading="lazy" />
+          <div class="portfolio-overlay"><span class="portfolio-label">Deck Build</span></div>
+        </div>
+        <div class="portfolio-item reveal rd2">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Exterior Renovation" loading="lazy" />
+          <div class="portfolio-overlay"><span class="portfolio-label">Exterior Work</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section id="service-area">
+    <div class="container">
+      <div class="area-inner">
+        <div class="area-content reveal">
+          <span class="label" style="display:block;margin-bottom:16px;">Where We Work</span>
+          <h2 class="heading area-heading">Serving the <span style="color:var(--gold)">Bay Area</span></h2>
+          <p class="area-text">We're based in the South Bay and serve communities throughout the greater Bay Area. If you're nearby, we can get there fast.</p>
+          <div class="area-list">
+            <div class="area-list-item">San Jose</div>
+            <div class="area-list-item">Santa Clara</div>
+            <div class="area-list-item">Sunnyvale</div>
+            <div class="area-list-item">Cupertino</div>
+            <div class="area-list-item">Campbell</div>
+            <div class="area-list-item">Los Gatos</div>
+            <div class="area-list-item">Saratoga</div>
+            <div class="area-list-item">Milpitas</div>
+            <div class="area-list-item">Fremont</div>
+            <div class="area-list-item">Mountain View</div>
+            <div class="area-list-item">Palo Alto</div>
+            <div class="area-list-item">San Mateo</div>
+          </div>
+          <a href="#quote-section" class="btn btn-gold">Check Your Area</a>
+        </div>
+        <div class="area-map reveal rd2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405617.9219836997!2d-122.37441!3d37.33939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSan%20Jose%2C%20CA!5e0!3m2!1sen!2sus!4v1690000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Gold Bay Builders Service Area">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div style="text-align:center;max-width:560px;margin:0 auto;position:relative;z-index:1;">
+        <span class="label reveal" style="display:block;margin-bottom:14px;">FAQ</span>
+        <h2 class="heading section-h reveal rd1" style="margin-bottom:12px;">Stuff People <span class="accent2">Ask Us</span></h2>
+        <p class="reveal rd2" style="font-size:0.92rem;color:var(--dim);margin-bottom:56px;">Real answers. No runaround.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item reveal"><span class="faq-q-label">Q.</span><div class="faq-question">How long does a roof replacement take?</div><p class="faq-answer">Most homes in the Bay Area take 1 to 3 days depending on size, pitch, and weather. We give you an honest timeline before we start — and we stick to it.</p></div>
+        <div class="faq-item reveal rd1"><span class="faq-q-label">Q.</span><div class="faq-question">Do you handle permits?</div><p class="faq-answer">Yes. For any work requiring a permit in CA, we handle the entire process from filing to final inspection. You don't have to deal with the city.</p></div>
+        <div class="faq-item reveal rd2"><span class="faq-q-label">Q.</span><div class="faq-question">Are you licensed and insured in California?</div><p class="faq-answer">Fully licensed in CA, bonded, and insured. We can send you a certificate of insurance before work starts if needed — just ask.</p></div>
+        <div class="faq-item reveal rd3"><span class="faq-q-label">Q.</span><div class="faq-question">Do you offer financing?</div><p class="faq-answer">Yes. We have flexible financing options for larger projects. Ask us when you get your estimate — we want to make it work for your budget.</p></div>
+        <div class="faq-item reveal"><span class="faq-q-label">Q.</span><div class="faq-question">How much does a new roof cost in the Bay Area?</div><p class="faq-answer">Most residential roofs in the Bay Area run $10,000 to $25,000 depending on size, slope, and materials. We give you exact numbers after seeing the job — no guessing.</p></div>
+        <div class="faq-item reveal rd1"><span class="faq-q-label">Q.</span><div class="faq-question">Do you work on ADUs?</div><p class="faq-answer">Yes. ADUs are one of our specialties. We handle the entire process — permits, foundation, framing, roofing, interior finish. One crew, one point of contact.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE SECTION -->
+  <section id="quote-section">
+    <div class="container">
+      <div class="quote-section-inner">
+        <div class="quote-left">
+          <span class="label reveal">Get Started</span>
+          <h2 class="display quote-heading reveal rd1">Get Your<br /><span class="accent">Free Quote</span></h2>
+          <p class="quote-sub reveal rd2">Ready to get it done right? Fill out the form or reach us directly. We respond the same day and show up when we say we will — every time.</p>
+          <div class="contact-items reveal rd3">
+            <div class="contact-item"><span class="contact-icon">📞</span><div><div class="contact-clabel">Phone</div><div class="contact-val"><a href="tel:4085067184">(408) 506-7184</a></div></div></div>
+            <div class="contact-item"><span class="contact-icon">👤</span><div><div class="contact-clabel">Owner</div><div class="contact-val">David Macias</div></div></div>
+            <div class="contact-item"><span class="contact-icon">📍</span><div><div class="contact-clabel">Service Area</div><div class="contact-val">Bay Area, CA</div></div></div>
+            <div class="contact-item"><span class="contact-icon">🕐</span><div><div class="contact-clabel">Hours</div><div class="contact-val">Mon–Sat: 7AM – 6PM</div></div></div>
+          </div>
+        </div>
+        <div class="quote-form-box reveal rd2">
+          <div class="form-title">Request a Free Estimate</div>
+          <form onsubmit="handleQuoteForm(event)">
+            <div class="form-row-2">
+              <div class="fg"><label>First Name</label><input type="text" placeholder="David" required /></div>
+              <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
+            </div>
+            <div class="form-row-2">
+              <div class="fg"><label>Phone *</label><input type="tel" placeholder="(408) 555-0100" required /></div>
+              <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" /></div>
+            </div>
+            <div class="fg fg-full">
+              <label>Service Needed *</label>
+              <select required>
+                <option value="" disabled selected>Select a service...</option>
+                <optgroup label="Roofing">
+                  <option>Roof Repair</option>
+                  <option>Roof Replacement</option>
+                  <option>Gutters</option>
+                </optgroup>
+                <optgroup label="Construction">
+                  <option>New Construction / ADU</option>
+                  <option>Kitchen Remodel</option>
+                  <option>Bathroom Remodel</option>
+                  <option>Full Interior Renovation</option>
+                  <option>Deck or Fence</option>
+                </optgroup>
+                <option>Multiple Services</option>
+                <option>Not Sure — Need an Estimate</option>
+              </select>
+            </div>
+            <div class="fg fg-full"><label>Property Address</label><input type="text" placeholder="123 Main St, San Jose, CA 95101" /></div>
+            <div class="fg fg-full"><label>Tell Us About Your Project</label>
+              <textarea placeholder="Describe the work, your timeline, budget range, any questions..."></textarea>
+            </div>
+            <div class="form-submit-btn">
+              <button type="submit" class="btn btn-gold">
+                Request My Free Quote
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <p class="form-note">No spam. No obligation. Just a free, honest estimate.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="https://github.com/user-attachments/assets/9ff9ed72-77c6-4401-ad46-a9a0907f2839" alt="Gold Bay Builders Inc" />
+          </div>
+          <p class="footer-desc">Premium roofing and construction serving the Bay Area. Licensed, bonded, and insured. Built right or we make it right.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <ul class="footer-links">
+            <li><a href="#services">Roof Repair</a></li>
+            <li><a href="#services">Roof Replacement</a></li>
+            <li><a href="#services">New Construction</a></li>
+            <li><a href="#services">Remodeling</a></li>
+            <li><a href="#services">Gutters</a></li>
+            <li><a href="#services">Decks &amp; Fences</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <ul class="footer-contacts">
+            <li>📞 <a href="tel:4085067184">(408) 506-7184</a></li>
+            <li>👤 David Macias, Owner</li>
+            <li>📍 Bay Area, California</li>
+            <li>🕐 Mon–Sat: 7AM – 6PM</li>
+          </ul>
+          <div style="margin-top:24px;"><a href="#quote-section" class="btn btn-outline-gold" style="padding:11px 22px;font-size:0.76rem;">Get Free Quote</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2025 Gold Bay Builders Inc. All rights reserved. CA License #GBB123</div>
+        <div class="footer-lic"><span class="footer-lic-dot"></span>Licensed &amp; Bonded &amp; Insured · Bay Area, CA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav shadow + floating CTA
+    const navbar = document.getElementById('navbar');
+    const floatingCta = document.getElementById('floatingCta');
+    const heroEl = document.getElementById('hero');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('shadow', window.scrollY > 10);
+      floatingCta.classList.toggle('visible', heroEl.getBoundingClientRect().bottom < 0);
+    }, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+    mobileClose.addEventListener('click', closeMobile);
+    mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMobile(); });
+    function closeMobile() { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Form handlers
+    function handleHeroForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const orig = btn.innerHTML;
+      btn.innerHTML = 'Sending...'; btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = "✓ Got it — we'll call you back soon.";
+        btn.style.background = '#A8872E';
+        e.target.reset();
+        setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.disabled = false; }, 5000);
+      }, 1200);
+    }
+
+    function handleQuoteForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const orig = btn.innerHTML;
+      btn.innerHTML = 'Sending...'; btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = "✓ Sent! We'll be in touch same day.";
+        btn.style.background = '#A8872E';
+        e.target.reset();
+        setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.disabled = false; }, 5000);
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
